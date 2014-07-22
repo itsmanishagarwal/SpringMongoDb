@@ -21,11 +21,11 @@ public class UserRepositoryImpl implements UserRepository {
   private MongoTemplate mongoTemplate;
 
   public List<User> findByName(String name) {
-    return mongoTemplate.find(new Query(where("name").is("Manish")), User.class);
+    return mongoTemplate.find(new Query(where("name").is(name)), User.class);
   }
   
   public List<User> findByAge(Long age) {
-    return mongoTemplate.find(new Query(where("age").gt(12L)), User.class);
+    return mongoTemplate.find(new Query(where("age").gt(age)), User.class);
   }
 
   public List<User> findAll() {
