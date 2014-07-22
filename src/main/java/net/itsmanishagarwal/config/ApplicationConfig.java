@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.data.web.config.SpringDataWebConfiguration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -31,11 +30,6 @@ import com.mongodb.MongoClient;
 @EnableMongoRepositories
 @EnableWebMvc
 public class ApplicationConfig extends AbstractMongoConfiguration {
-
-  @Bean
-  public SpringDataWebConfiguration getSpringDataWebConfiguration() {
-    return new SpringDataWebConfiguration();
-  }
 
   @Override
   public @Bean

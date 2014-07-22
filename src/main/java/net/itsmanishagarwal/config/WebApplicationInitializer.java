@@ -19,12 +19,17 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
   }
 
   /**
-   * ApplicationContext beans are added here.
+   * ApplicationContext beans are added here. <br>
+   * Specify {@link org.springframework.context.annotation.Configuration @Configuration} and/or
+   * {@link org.springframework.stereotype.Component @Component} classes to be provided to the
+   * {@linkplain #createServletApplicationContext() dispatcher servlet application context}.
+   * 
+   * @return the configuration classes for the dispatcher servlet application context (may not be empty or {@code null})
    */
   @Override
   protected Class<?>[] getServletConfigClasses() {
     return new Class[] {
-        WebApplicationConfig.class, ApplicationConfig.class
+      ApplicationConfig.class
     };
   }
 
